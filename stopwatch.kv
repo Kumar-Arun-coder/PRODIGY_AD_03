@@ -1,0 +1,52 @@
+BoxLayout:
+	padding:10
+	orientation:'vertical'
+    background_color:'#404040'
+    Label:
+        halign: 'center'
+        markup: True
+        text: "[size=60][b]StopWatch[/b][/size]"
+        color:1,1,1,1
+        pos_hint: {'y': .45}
+	
+	Label:
+		id:time
+		text:'[b]'+str(app.min)+'[size=40]min[/size][/b]:'+str(app.sec)+'[size=40]sec[/size].[size=60]'+str(app.ms)+'[/size][size=40]ms[/size][/color]'
+		font_size:60
+		
+		
+		markup:True
+	BoxLayout:
+		cols:2
+        spacing:300
+		Button:
+			#text:'[color='+app.fontcolor+']start[/color]'
+			font_size:48
+            padding:40,5
+			markup:True
+			background_normal:'B2.png'
+			background_down:'B4.png'
+			size_hint:(0.001,0.5)
+			pos_hint:{'x':0.35,'y':0.3}
+			on_press:app.increment()
+			on_release:app.font_color_change()
+		Button:
+			#text:'[color='+app.font_color+']'+app.duty+'[/color]'
+			font_size:48
+			markup:True
+			background_normal:'B1.png'
+			background_down:'B3.png'
+			size_hint:(0.001,0.5)
+			pos_hint:{'x':0.35,'y':0.3}
+			on_press:app.minus()
+			on_release:app.font_color_change()
+        
+	
+		
+	
+	
+		
+		
+
+	
+			
